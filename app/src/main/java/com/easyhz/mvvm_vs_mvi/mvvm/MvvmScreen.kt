@@ -29,13 +29,13 @@ private fun MvvmScreenContent(
     onBackClick: () -> Unit
 ) {
     if (isLoading) {
-        // 로딩 이벤트
+        // 로딩
         Loading()
     } else {
         /*
          * `post` 내용
          * `isLiked`의 표기
-         * `onToggleLike`, `onBackClick` 등의 이벤트가 발생할 수 있음
+         * `onToggleLike`, `onBackClick` 등이 발생할 수 있음
          */
     }
 }
