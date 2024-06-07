@@ -22,6 +22,7 @@ sealed class PostIntent : UiIntent() {
     data class OnClick(val post: ExamplePost): PostIntent()
     data object Refresh: PostIntent()
 }
+
 sealed class PostSideSideEffect: UiSideEffect() {
     data object ShowErrorToast: PostSideSideEffect()
     data class ShowToast(val message: String) : PostSideSideEffect()

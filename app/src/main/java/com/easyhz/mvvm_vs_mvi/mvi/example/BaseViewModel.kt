@@ -39,7 +39,6 @@ abstract class BaseViewModel<State: UiState, Intent: UiIntent, SideEffect: UiSid
 
     private val _sideEffect: Channel<SideEffect> = Channel()
     val sideEffect = _sideEffect.receiveAsFlow()
-
     init {
         subscribeIntent()
     }
@@ -59,7 +58,7 @@ abstract class BaseViewModel<State: UiState, Intent: UiIntent, SideEffect: UiSid
     /**
      * State 설정
      */
-    protected fun reduce(reducer: State.() -> State) { _uiState.value = currentState.reducer() }
+    fun reduce(reducer: State.() -> State) { _uiState.value = currentState.reducer() }
 
     /**
      * Intent 설정
@@ -69,5 +68,5 @@ abstract class BaseViewModel<State: UiState, Intent: UiIntent, SideEffect: UiSid
     /**
      * SideEffect 설정
      */
-    protected fun postSideEffect(builder: () -> SideEffect) = viewModelScope.launch { _sideEffect.send(builder()) }
+    fun postSideEffect(builder: () -> SideEffect) = viewModelScope.launch { _sideEffect.send(builder()) }
 }
