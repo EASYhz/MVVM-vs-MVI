@@ -3,7 +3,7 @@ package com.easyhz.mvvm_vs_mvi.mvvm
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import com.easyhz.mvvm_vs_mvi.domain.Post
+import com.easyhz.mvvm_vs_mvi.domain.model.Post
 import com.easyhz.mvvm_vs_mvi.util.Loading
 
 @Composable
